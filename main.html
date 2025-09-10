@@ -7,8 +7,70 @@
 </head>
 
 <body>
+	<style>
+   .Container{
+                    display: grid;
+                    grid-template-columns:repeat(3,100px);
+                    grid-template-rows: repeat(3,100px);
+                    justify-content: center;
+                    gap: 20px;
+            }
+            .grid-items{
+                    border: 2px solid black;
+                    font-size: 2rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                   
+
+            }
+            .actions{
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+                gap: 1rem;
+            }
+    </style>
+<div class = "Container">
+    <div class = "grid-items" id = "1">1</div>
+    <div class = "grid-items" id = "2">2</div>
+    <div class = "grid-items" id = "3">3</div>
+    <div class = "grid-items" id = "4">4</div>
+    <div class = "grid-items" id = "5">5</div>
+    <div class = "grid-items" id = "6">6</div>
+    <div class = "grid-items" id = "7">7</div>
+    <div class = "grid-items" id = "8">8</div>
+    <div class = "grid-items" id = "9">9</div>
+    </div>
+    <form class = "actions" id = "form">
+        <label for="selectBox">Select Box</label>
+        <input type = "text" id="selectBox">
+        <label for = "entercolor">Enter Color</label>
+        <input type = "text" id = "entercolor">
+        <input type = "submit" value = "Submit">
+    </form>
 	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
+	
+    <script>
+		const form = document.getElementById("form")
+		const Boxes = document.querySelectorAll(".grid-items")
+		form.addEventListener("submit",(e)=>{
+			BgColor();
+    e.preventDefault();   
+    const selectBox = document.getElementById("selectBox").value;
+    const entercolor = document.getElementById("entercolor").value;
+    const box = document.getElementById(selectBox);
+    if(box){
+        box.style.backgroundColor = entercolor;
+    }else{
+        alert("Please enter a valid box number between 1 to 9")
+    }
+})
+function BgColor(){
+for(box of Boxes){
+    box.style.backgroundColor = "Transparent"
+}
+}
 </script>
 
 </body>
