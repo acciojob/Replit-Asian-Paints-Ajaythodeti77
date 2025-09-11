@@ -1,1 +1,23 @@
-/*  your css code here. If applicable */
+.Container {
+  display: grid;
+  grid-template-columns: repeat(3,100px);
+  grid-template-rows: repeat(3,100px);
+  justify-content: center;
+  gap: 20px;
+}
+
+.grid-items {
+  border: 2px solid black;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 1rem;
+}
+
